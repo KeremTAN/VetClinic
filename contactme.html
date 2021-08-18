@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>TVC CONTACT</title>
+    <link rel="stylesheet" href="style/nav-footer-wh.css">
+    <link rel="stylesheet" href="style/all.css">
+    <link rel="stylesheet" href="style/contactme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // if phone length < 11 -> error
+            $("#phone").mask("99999999999");
+
+            $('#send').click(function() {
+                if (checkForNames() && checkForEmail() && checkForPhone() && checkForIssues() && checkForMessages()) {
+                  window.open("response.html");
+                } else {
+                    if(checkForNames()==false)
+                        alert('You are not allowed to null Full Name field!');
+                    else if(checkForEmail()==false)
+                        alert('There is a mistake on E-mail field! You should enter on the Email field a valid email address in terms of <id>@<domain> pattern.');
+                    else if(checkForPhone()==false)
+                        alert('There is a mistake on Phone field! Phone number must be 05xxxxxxxxx');
+                    else if(checkForIssues()==false){
+                        alert('There is a mistake on Issue field! You have to choose one of the options which are given you!');
+                    }
+                     else
+                         alert('You are not allowed to null message field!');
+                    
+                }
+            });
+        });
+
+        function checkForNames() {
+            var value = $('#full-name').val();
+            var letters =/^[A-Za-zğüışçö]+$/;
+            if (value.match(letters)) {
+                return value.length > 0;
+            } else
+                return false;   
+        }
+
+        function checkForPhone() {
+            return $("#phone").val().length == 11;
+        }
+
+        function checkForEmail() {
+            var email = $('#email').val();
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (email.match(mailformat)) {
+                return true;
+            } else
+                return false;
+        }
+        
+        function checkForIssues() {
+            var value = $('#issuesx').val();
+            if ( (value.match('Recommendation') || value.match('Complaint') ||value.match('Question') ||value.match('Thanks') ||value.match('Other')) && (value.length>0)) {
+                return true;
+            } else
+                return false;   
+        }
+        
+        function checkForMessages() {
+
+            var value = $('#messages').val();
+            if (value.length > 0) {
+                return true;
+            } else
+                return false;   
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-over">
+        <div class="head-line">
+            <a class="navbar-brand" href="#">CONTACT US</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <i class="fas fa-sliders-h navbar-toggle"></i>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="blog.html" class="nav-link"><i class="fas fa-blog"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="team.html" class="nav-link"><i class="fas fa-user-friends"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="gallery.html" class="nav-link"><i class="fas fa-images"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="contactme.html" class="nav-link active"><i class="fas fa-tty"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="registration.html" class="nav-link"><i class="far fa-id-card"></i></a>
+                    </li>
+                </div>
+
+            </ul>
+            <form action="http://www.google.com/search" method="get" target="_blank"  class="form-inline my-2 my-lg-0">
+                <input id="search-text" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button id="search" class="btn my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    
+    <div class="death-space"  style="height: 4.2rem;"></div>
+
+    <div class="row" id="contact">
+        <div class="container marg-n mt-5">
+            <div class="row" style="height:550px;">
+                <div class="col-md-6 col-sm-12 maps">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1vMrsKwd7ovReZW5bRTBC2PknobY" width="640" height="480"></iframe>                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h2 class="text-uppercase mt-3 font-weight-bold text-white">CONTACT</h2>
+                    <form action="">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="text" id="full-name" class="form-control mt-2" placeholder="Full Name">
+                                </div>
+                            </div>
+                          
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form-control mt-2" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                     <input type="text" id="phone" class="form-control mt-2" placeholder="05xxxxxxxxx">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="issue" style="color: white;font-weight: bold;font-size: 22px;">Issue</label>
+                                     
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-group">    
+                                    <input id="issuesx" list="issues" class="form-control" placeholder="Please, enter your issue...">
+                                    <datalist id="issues">
+                                        <option value="Recommendation"></option>
+                                        <option value="Complaint"></option>
+                                        <option value="Question"></option>
+                                        <option value="Thanks"></option>
+                                        <option value="Other"></option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="messages" placeholder="Please, enter the your message" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button id="send" class="btn" type="submit">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="ftr">
+        <div>©2020 All Rights Reserved by TAN VETERINARY CLINIC</div>
+    </footer>
+</body>
+</html>

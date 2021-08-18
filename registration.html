@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TVC REGISTRATION</title>
+    <meta name="content" content="We care about your pets as you as!">
+    <meta name="keywords" content="veterınary, clinic, pets">
+    <meta name="title" content="TAN VETERINARY CLINIC">
+    <link rel="stylesheet" href="style/nav-footer-wh.css">
+    <link rel="stylesheet" href="style/all.css">
+    <link rel="stylesheet" href="style/registration.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // if phone length < 11 -> error
+            $("#phone").mask("99999999999");
+
+            $('#send').click(function() {
+                if (checkForNames() && checkForBirthday() && checkForEmail() && checkForPhone() && checkPassword()) {
+                  window.open("thanks.html");
+                } else {
+                    if(checkForNames()==false)
+                        alert('There is a mistake on Name or Surname field! You should just enter letter and you are not allowed to null these area!');
+                    else if(checkForBirthday()==false)
+                        alert('There is a mistake on Birthday field! You should enter the year field between 1910 and 2021 years!');
+                    else if(checkForEmail()==false)
+                        alert('There is mistake E-mail field! You should enter on the Email field a valid email address in terms of <id>@<domain> pattern.');
+                    else if(checkForPhone()==false)
+                        alert('There is mistake Phone field! Phone number must be 05xxxxxxxxx');
+                     else
+                         alert('Password should be at least 8 and at most 16 characters long. Also, a password should contain at least one uppercase letter, one digit, and one special character. If you did all of them, check to confirm field!');
+                    
+                }
+            });
+        });
+
+        function checkForNames() {
+
+            var value = $('#name').val();
+            var value2 = $('#surname').val();
+            var letters =/^[A-Za-zğüışçö]+$/;
+            if (value.match(letters) && value2.match(letters)) {
+                return value.length > 0 && value2.length > 0;
+            } else
+                return false;   
+        }
+
+        function checkForPhone() {
+            return $("#phone").val().length == 11;
+        }
+
+        function checkForBirthday() {
+            var date = $('#bday').val();
+            //2020-01-15
+            var splitted = date.split('-');
+            var day = splitted[2];
+            var month = splitted[1];
+            var year = splitted[0];
+            var _date = new Date(year + "-" + month + "-" + day);
+
+            //var yearX = parseInt(year);
+
+            if (year > 2020 || year < 1910)
+                return false;
+            else
+                return true;
+        }
+
+        function checkForEmail() {
+            var email = $('#email').val();
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (email.match(mailformat)) {
+                return true;
+            } else
+                return false;
+        }
+
+        function checkPassword() {
+            var password = $('#password').val();
+            var passwordconfirm = $('#passwordconfirm').val();
+            var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,16}$/;
+            if (password.match(decimal)) {
+                if (password == passwordconfirm)
+                    return true;
+                else {
+                    return false;
+                }
+            } else {                    
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-over">
+        <div class="head-line">
+            <a class="navbar-brand" href="#">REGISTRATION</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-sliders-h navbar-toggle"></i>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="blog.html" class="nav-link"><i class="fas fa-blog"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="team.html" class="nav-link"><i class="fas fa-user-friends"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="gallery.html" class="nav-link"><i class="fas fa-images"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="contactme.html" class="nav-link"><i class="fas fa-tty"></i></a>
+                    </li>
+                </div>
+
+                <div class="item-width">
+                    <li id="nav-item">
+                        <a href="registeration.html" class="nav-link active"><i class="far fa-id-card"></i></a>
+                    </li>
+                </div>
+
+            </ul>
+            <form action="http://www.google.com/search" method="get" target="_blank"  class="form-inline my-2 my-lg-0">
+                <input id="search-text" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button id="search" class="btn my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="death-space"  style="height: 2.2rem;"></div>
+
+    <div class="row" id="contact">
+        <div class="container marg-n mt-5">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <h2 class="text-uppercase mt-3 font-weight-bold text-white">REGISTRATION</h2>
+                    <form action="">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="form-control mt-2 " placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="text" id="surname" class="form-control mt-2 " placeholder="Surname">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form-control mt-2" placeholder="Email --> crazy_@gmail.com">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="date" id="bday" class="form-control mt-2" placeholder="Birthday">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" id="phone" class="form-control mt-2" placeholder="Phone --> 05xxxxxxxxx">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="password" id="password" class="form-control mt-2" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="password" id="passwordconfirm" class="form-control mt-2" placeholder="Password Confirm">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="issue" style="color: white;font-weight: bold;font-size: 1.4rem;">Gender</label>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <label>
+
+                                        <input name="gender" type="radio" value="Male">
+                                        Male
+                                    </label>
+                                    <label>
+
+                                        <input name="gender" type="radio" value="Female">
+                                        Female
+                                    </label>
+
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="aboutpets" placeholder="About you and your pets..." rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="file" class=" btn btn-over" id="choose-file">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="pets" style="color: white;font-weight: bold;font-size: 22px;">Pets you are interested in </label>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="col-md-12 row">
+                                    <div class="col-md-6 col-sm-12 pad">
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Budgerigar</label>
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Dogs</label>
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Fishes</label>
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Snakes</label>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 pad">
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Lizard</label>
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Cats</label>
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Hamster</label>
+                                        <label class="col-md-4 col-sm-12"><input type="checkbox"> Parrot</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <button id="send" class="btn btn-over" type="button">Submit</button>
+                            </div>
+
+                            <div class="col-10">
+                                <button id="reset" class="btn btn-over" type="reset">Reset</button>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <footer class="ftr">
+        <div>©2020 All Rights Reserved by TAN VETERINARY CLINIC</div>
+    </footer>
+
+
+</body>
+
+</html>

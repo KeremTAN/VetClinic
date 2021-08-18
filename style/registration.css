@@ -1,0 +1,166 @@
+[type='radio'] {
+    -webkit-appearance: none;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 0 4px #6699ff;
+}
+
+[type='radio']:checked {
+    box-shadow: 0 0 0 6px #003399;
+    font-size: 110%;
+}
+
+[type='radio']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
+}
+
+[type='checkbox'] {
+    -webkit-appearance: none;
+    width: 11px;
+    height: 11px;
+    outline: none;
+    box-shadow: 0 0 0 4px #6699ff;
+    float: left;
+}
+
+[type='checkbox']:checked {
+    box-shadow: 0 0 0 6px #003399;
+    float: left
+}
+
+[type='checkbox']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    float: left
+}
+label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    float: left;
+    padding-right: 0.8rem;
+    text-shadow: 1px 1px #2e2d2c!important;
+}
+
+.pad{
+    padding: 0.5rem;
+}
+h2{
+    text-shadow: 2px 2px #2e2d2c!important;
+}
+
+#contact {
+    background-color: rgba(135, 206, 235, 0.7);
+    letter-spacing: 2px;
+}
+
+#contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+@media (max-width: 575.98px) {
+
+    #contact {
+        padding-bottom: 800px;
+    }
+
+    #contact .maps iframe {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+
+@media (min-width: 576px) {
+
+    #contact {
+        padding-bottom: 800px;
+    }
+
+    #contact .maps iframe {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #contact {
+        padding-bottom: 350px;
+    }
+
+    #contact .maps iframe {
+        width: 100%;
+        height: 850px;
+    }
+}
+
+@media (min-width: 992px) {
+    #contact {
+        padding-bottom: 200px;
+    }
+
+    #contact .maps iframe {
+        width: 100%;
+        height: 700px;
+    }
+}
+
+
+#author a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#send,
+#reset {
+    float: right;
+    margin-top: 1rem;
+    width: 40%;
+    background-color: #003399 !important;
+    transition: 0.7s;
+    border-color: #fff;
+    color: #fff;
+    box-sizing: border-box;
+    font-weight: 800;
+    font-size: 110%;
+    transition: 0.4s;
+}
+#name, #surname{
+    text-transform: capitalize;
+}
+#send:hover,
+#reset:hover {
+    opacity: 0.6;
+    width: 50%;
+}
+#choose-file{
+    float: left;
+    margin-bottom: 1rem;
+    width: 40%;
+    background-color: #003399 !important;
+    transition: 0.7s;
+    border-color: #fff;
+    color: #fff;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 90%;
+    transition: 0.4s;
+    opacity: 0.75;
+}
+#choose-file:hover {
+    opacity: 1;
+    width: 65%;
+}

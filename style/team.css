@@ -1,0 +1,116 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    box-sizing:border-box;
+}
+
+.container {
+    height: 80vh;
+}
+#team-lbl{
+    font-size: 1.7rem!;
+    font-weight: bold;
+    text-shadow: 1.7px 1.7px black;
+}
+label {
+    color: white !important;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 1vh;
+    font-weight: 500;
+    text-shadow: 1px 1px black;
+}
+
+.first-line {
+    background-color:rgba(0, 51, 153,0.60);
+    display: inline-block !important;
+    width:35% !important;
+    transition: 1s;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+    box-sizing:border-box !important;
+    border-top-left-radius:13px;
+    border-bottom-left-radius:13px;    
+}
+.first-line:hover {
+    background-color:rgba(0, 51, 153,0.83);
+    width:55% !important;
+}
+.first-line:hover img {
+    border-radius: 10% !important;
+    opacity: 1;
+}
+
+.second-line {
+    background-color:rgba(0, 51, 153,0.60);
+    display: inline-block !important;
+    float: right;
+    width:35% !important;
+    transition: 1s;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    
+    box-sizing:border-box !important;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+.second-line:hover {
+    background-color:rgba(0, 51, 153,0.83);
+    width:55% !important;    
+}
+.second-line:hover img {
+    border-radius: 10% !important;
+    opacity: 1;
+}
+
+img {
+    border:none ;
+    border-radius: 40% !important;
+    width: 20vh !important;
+    transition: 0.7s;
+    opacity: 0.85;
+}
+
+@media (max-width:900px) {
+    img {
+        margin-left: 1vh;
+        display: block;
+    }
+    #team-lbl {
+        font-size: 1.3rem !;
+        font-weight: bold;
+    }  
+    label {
+        color: white !important;
+        font-size: 1.1rem;
+        display: block;
+    }
+
+    .second-line {
+        float: none !important;
+        display: block !important;
+        margin-top: 2vh;
+        width: 100% !important;
+    }
+
+    .first-line {
+        float: none !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .first-line:hover {
+        background-color: rgba(0, 51, 153, 0.83);
+        width: 100% !important;width: 100% !important;
+        
+    }
+
+    .second-line:hover {
+        background-color: rgba(0, 51, 153, 0.83);
+        width: 100% !important;
+        
+    }
+
+}

@@ -1,0 +1,91 @@
+ #contact {
+     background-color: rgba(135, 206, 235, 0.7);
+     letter-spacing: 2px;
+ }
+
+ #contact a {
+     color: #fff;
+     text-decoration: none;
+ }
+
+ @media (max-width: 575.98px) {
+     #contact {
+         padding-bottom: 800px;
+     }
+
+     #contact .maps iframe {
+         width: 100%;
+         height: 450px;
+     }
+ }
+
+ @media (min-width: 576px) {
+
+     #contact {
+         padding-bottom: 800px;
+     }
+
+     #contact .maps iframe {
+         width: 100%;
+         height: 450px;
+     }
+ }
+
+ @media (min-width: 768px) {
+
+     #contact {
+         padding-bottom: 350px;
+     }
+
+     #contact .maps iframe {
+         width: 100%;
+         height: 850px;
+     }
+ }
+
+ @media (min-width: 992px) {
+     #contact {
+         padding-bottom: 200px;
+     }
+
+     #contact .maps iframe {
+         width: 100%;
+         height: 700px;
+     }
+ }
+
+ #author a {
+     color: #fff;
+     text-decoration: none;
+ }
+
+#send {
+    float: right;
+    margin-top: 1rem;
+    width: 40%;
+    background-color: #003399 !important;
+    transition: 0.7s;
+    border-color: #fff;
+    color: #fff;
+    box-sizing: border-box;
+    font-weight: 800;
+    font-size: 110%;
+    transition: 0.4s;
+}
+#send:hover {
+    opacity: 0.6;
+    width: 50%;
+}
+
+/*Textboxlar için*/
+.InputText {
+    border-radius: 10px;
+    height: 25px;
+    width: 55%;
+    outline: none;
+}
+.InputText:focus {
+    width: 75%;
+    border-color: #6699ff;
+    border-top-color: #6699ff;
+}

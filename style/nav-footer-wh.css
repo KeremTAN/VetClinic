@@ -1,0 +1,138 @@
+/*Container*/
+body{
+    background-color: skyblue !important;
+}
+nav {
+    top:0px;
+}
+#nav-over {
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #fff !important;
+}
+
+/* Köşedeki bilgi yazısı homapage,.. */
+.head-line {
+    box-sizing: border-box;
+    width: 10rem;
+}
+
+.head-line > a {
+    color: skyblue !important;
+    font-weight: bold;
+}
+
+.head-line > a:hover {
+    cursor: default;
+}
+
+/*sayfa küçlünce oluşacak buton icon*/
+.navbar-toggler {
+    border-color: skyblue !important;
+    color: skyblue !important;
+    font-size: 0.8rem !important;
+    outline: none !important;
+    float: right !important;
+    border-width: 0.15rem !important;
+}
+
+/* Navbar içindeki ul-li leri kapsayan parça divler*/
+#nav-over .item-width {
+    width: 100%;
+    padding-right: 2rem;
+}
+
+/* Navbar > li idleri */
+#nav-item .active {
+    color: whitesmoke;
+    background: rgba(103,129,230,0.8)  !important;
+    font-size: 125%;
+}
+
+/* Navbar > li > a classları */
+.nav-link {
+    color: skyblue !important;
+    font-weight: bold !important;
+    text-align: center;
+    transition: 0.7s;
+    font-size: 108%;
+}
+
+#nav-over .nav-link:hover {
+    color: whitesmoke;
+    background: rgba(103,129,230,0.8)  !important;
+    text-decoration: underline;
+    font-size: 125%;
+}
+
+/* Navbar > li > a > i */
+i {
+    color: skyblue;
+    font-size: 175%;
+}
+
+/* Search Text*/
+#search-text {
+    transition: 0.6s !important;
+    outline: none !important;
+    box-sizing: border-box;
+}
+
+#search-text:hover,
+#search-text:focus {
+    border-width: 0.4rem;
+    border-color: lightgrey !important;
+    outline: none !important;
+}
+
+/*Search Butonu*/
+#nav-over #search {
+    background-color: skyblue !important;
+    transition: 0.7s;
+    border-color: #fff;
+    color: #fff;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+#nav-over #search:hover {
+    border-width: 0.25rem;
+    color: skyblue !important;
+    border-color: skyblue;
+    background-color: #fff !important;
+    font-weight: 900;
+    width: calc(100%-0.4rem);
+}
+
+.ftr {
+    background-color: #fff;
+    height: 2.8rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}
+
+.ftr > div {
+    color: skyblue;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px gray !important;
+}
+
+@media (max-width:680px) {
+    .ftr > div {
+        font-size: 1.125rem;
+        text-shadow: 1.2px 1.2px gray !important;
+    }
+
+    .ftr {
+        height: 2.4rem;
+    }
+    .marg-n
+    {
+        margin-left: 3vh !important;
+        margin-right: 3vh !important;
+    }  
+}

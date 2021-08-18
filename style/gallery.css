@@ -1,0 +1,17 @@
+img {
+    
+}
+
+.r-size {
+    width=1000 !important;
+    height=50vh !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width:920px) {
+    .r-size {
+        height: 50vh !important
+    }
+}
+
+/*<img src="https://www.hazirticaretsitesi.com/blog/wp-content/uploads/petshop.jpg" style="width: 100%; height=100vh !important; opacity:0.5; position:fixed" alt=""> */
